@@ -11,7 +11,7 @@ metadata:
   name: kubectl-top-exporter
 rules:
 - apiGroups: [""]
-  resources: ["node"]
+  resources: ["nodes"]
   verbs: ["get","list"]
 - apiGroups: [metrics.k8s.io"]
   resources: ["pods","nodes"]
