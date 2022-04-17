@@ -10,7 +10,10 @@ kind: ClusterRole
 metadata:
   name: kubectl-top-exporter
 rules:
-- apiGroups: ["metrics.k8s.io"]
+- apiGroups: [""]
+  resources: ["node"]
+  verbs: ["get","list"]
+- apiGroups: [metrics.k8s.io"]
   resources: ["pods","nodes"]
   verbs: ["get","list"]
 ---
