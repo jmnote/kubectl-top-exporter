@@ -12,9 +12,10 @@ spec:
       labels:
         app: kubectl-top-exporter
     spec:
+      serviceAccountName: kubectl-top-exporter
       containers:
       - name: kubectl-top-exporter
-        image: jmnote/kubectl-top-exporter:v0.1.0
+        image: jmnote/kubectl-top-exporter:v0.1.2
         resources:
           requests:
             memory: "32Mi"
