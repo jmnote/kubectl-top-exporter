@@ -43,20 +43,20 @@ func NewCollector() (*collector, error) {
 		// nodeMemoryBytesDesc: prometheus.NewDesc("kubectl_top_node_memory_bytes", "kubectl top node; MEMORY(bytes)", []string{"name"}, nil),
 		// nodeMemoryRatioDesc: prometheus.NewDesc("kubectl_top_node_memory_ratio", "kubectl top node; MEMORY%", []string{"name"}, nil),
 
-		// podCPUCoresDesc:          prometheus.NewDesc("kubectl_top_pod_cpu_cores", "kubectl top pod -A; CPU(cores)", []string{"namepace", "name"}, nil),
-		// podMemoryBytesDesc:       prometheus.NewDesc("kubectl_top_pod_memory_bytes", "kubectl top pod; -A MEMORY(bytes)", []string{"namepace", "name"}, nil),
-		// containerCPUCoresDesc:    prometheus.NewDesc("kubectl_top_pod_cpu_cores", "kubectl top pod -A --containers; CPU(cores)", []string{"namepace", "pod", "name"}, nil),
-		// containerMemoryBytesDesc: prometheus.NewDesc("kubectl_top_pod_memory_bytes", "kubectl top pod -A --containers; MEMORY(bytes)", []string{"namepace", "pod", "name"}, nil),
+		// podCPUCoresDesc:          prometheus.NewDesc("kubectl_top_pod_cpu_cores", "kubectl top pod -A; CPU(cores)", []string{"namespace", "name"}, nil),
+		// podMemoryBytesDesc:       prometheus.NewDesc("kubectl_top_pod_memory_bytes", "kubectl top pod; -A MEMORY(bytes)", []string{"namespace", "name"}, nil),
+		// containerCPUCoresDesc:    prometheus.NewDesc("kubectl_top_pod_cpu_cores", "kubectl top pod -A --containers; CPU(cores)", []string{"namespace", "pod", "name"}, nil),
+		// containerMemoryBytesDesc: prometheus.NewDesc("kubectl_top_pod_memory_bytes", "kubectl top pod -A --containers; MEMORY(bytes)", []string{"namespace", "pod", "name"}, nil),
 
 		nodeCPUMillicoresDesc:   prometheus.NewDesc("kubectl_top_node_cpu_millicores", "kubectl top node; CPU(cores)", []string{"name"}, nil),
 		nodeCPUPercentDesc:      prometheus.NewDesc("kubectl_top_node_cpu_percent", "kubectl top node; CPU%", []string{"name"}, nil),
 		nodeMemoryMibibytesDesc: prometheus.NewDesc("kubectl_top_node_memory_mibibytes", "kubectl top node; MEMORY(bytes)", []string{"name"}, nil),
 		nodeMemoryPercentDesc:   prometheus.NewDesc("kubectl_top_node_memory_percent", "kubectl top node; MEMORY%", []string{"name"}, nil),
 
-		podCPUMillicoresDesc:         prometheus.NewDesc("kubectl_top_pod_cpu_millicores", "kubectl top pod -A; CPU(cores)", []string{"namepace", "name"}, nil),
-		podMemoryMibibytesDesc:       prometheus.NewDesc("kubectl_top_pod_memory_mibibytes", "kubectl top pod -A; MEMORY(bytes)", []string{"namepace", "name"}, nil),
-		containerCPUMillicoresDesc:   prometheus.NewDesc("kubectl_top_pod_container_cpu_millicores", "kubectl top pod -A --containers; CPU(cores)", []string{"namepace", "pod", "name"}, nil),
-		containerMemoryMibibytesDesc: prometheus.NewDesc("kubectl_top_pod_container_memory_mibibytes", "kubectl top pod -A --containers; MEMORY(bytes)", []string{"namepace", "pod", "name"}, nil),
+		podCPUMillicoresDesc:         prometheus.NewDesc("kubectl_top_pod_cpu_millicores", "kubectl top pod -A; CPU(cores)", []string{"namespace", "name"}, nil),
+		podMemoryMibibytesDesc:       prometheus.NewDesc("kubectl_top_pod_memory_mibibytes", "kubectl top pod -A; MEMORY(bytes)", []string{"namespace", "name"}, nil),
+		containerCPUMillicoresDesc:   prometheus.NewDesc("kubectl_top_pod_container_cpu_millicores", "kubectl top pod -A --containers; CPU(cores)", []string{"namespace", "pod", "name"}, nil),
+		containerMemoryMibibytesDesc: prometheus.NewDesc("kubectl_top_pod_container_memory_mibibytes", "kubectl top pod -A --containers; MEMORY(bytes)", []string{"namespace", "pod", "name"}, nil),
 	}, nil
 }
 
