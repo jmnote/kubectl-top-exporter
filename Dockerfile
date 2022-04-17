@@ -2,10 +2,12 @@ FROM golang:1.17-alpine AS build
 WORKDIR /temp/
 COPY . ./
 RUN go mod download
-RUN go build -o /kubectl-top-exporter
+RUN go build -o /kubectl_top_exporter
 
 FROM alpine:3.15
 WORKDIR /
-COPY --from=build /kubectl-top-exporter /kubectl-top-exporter
-EXPOSE 9100
-ENTRYPOINT ["/kubectl-top-exporter"]
+COPY --from=build /kubectl_top_exporter /kubectl_top_exporter
+
+EXPOSE     9977
+USER       nobody
+ENTRYPOINT ["/kubectl_top_exporter"]
