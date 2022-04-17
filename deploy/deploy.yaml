@@ -15,7 +15,7 @@ spec:
       serviceAccountName: kubectl-top-exporter
       containers:
       - name: kubectl-top-exporter
-        image: jmnote/kubectl-top-exporter:v0.1.2
+        image: ghcr.io/jmnote/kubectl-top-exporter:v0.1.3
         resources:
           requests:
             memory: "32Mi"
