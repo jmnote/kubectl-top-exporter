@@ -11,7 +11,7 @@ import (
 func main() {
 	collector, err := collector.NewCollector()
 	if err != nil {
-		log.Fatal("Cannot initialize a new collector.")
+		log.Println("Cannot initialize a new collector.")
 	}
 	prometheus.Register(collector)
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {

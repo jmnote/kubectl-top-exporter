@@ -6,11 +6,10 @@ import (
 	"k8s.io/client-go/kubernetes"
 	corev1client "k8s.io/client-go/kubernetes/typed/core/v1"
 	_ "k8s.io/client-go/plugin/pkg/client/auth"
+	"k8s.io/client-go/rest"
 	"k8s.io/client-go/tools/clientcmd"
 	metricsapi "k8s.io/metrics/pkg/apis/metrics"
 	metricsclientset "k8s.io/metrics/pkg/client/clientset/versioned"
-	"os"
-	// "k8s.io/client-go/rest"
 )
 
 type Client struct {
@@ -19,9 +18,9 @@ type Client struct {
 }
 
 func NewClient() (*Client, error) {
-	// config, err := rest.InClusterConfig()
-	kubeconfig := os.Getenv("HOME") + "/.kube/config"
-	config, err := clientcmd.BuildConfigFromFlags("", kubeconfig)
+	// kubeconfig := os.Getenv("HOME") + "/.kube/config"
+	// config, err := clientcmd.BuildConfigFromFlags("", kubeconfig)
+	config, err := rest.InClusterConfig()
 	if err != nil {
 		return nil, err
 	}

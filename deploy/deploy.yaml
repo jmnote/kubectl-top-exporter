@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubectl-top-exporter
+  namespace: kube-system
+spec:
+  selector:
+    matchLabels:
+      app: kubectl-top-exporter
+  template:
+    metadata:
+      labels:
+        app: kubectl-top-exporter
+    spec:
+      containers:
+      - name: kubectl-top-exporter
+        image: jmnote/kubectl-top-exporter:v0.1.0
+        resources:
+          requests:
+            memory: "32Mi"
+            cpu: "100m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 9977
